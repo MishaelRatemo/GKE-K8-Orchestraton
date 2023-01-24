@@ -1,0 +1,41 @@
+apiVersion: apps/v1.0
+kind: Deployment
+metadata:
+  name: yolo-front
+  labels:
+    app: yolo
+    component: front
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: front
+  template:
+    metadata:
+      Labels:
+       app: yolo
+       component: front
+    spec:
+     containers:
+     - name: clientcontainer
+       image: mishaelr/frontend: 1
+       ports:
+         containerPort: 3000
+---
+apiVersion: apps/v1.0
+kind: Service
+metadata:
+  name: yolomy-frontend
+  labels:
+    app: yolomy
+    component: frontend
+spec:
+  type: LoadBalancer
+  selector:
+    app: yolomy
+    component: frontend
+  ports:
+   - port: 3000
+     targetPort: 3000
+     protocol: TCP
+     name: http
