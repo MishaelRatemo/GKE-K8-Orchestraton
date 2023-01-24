@@ -14,11 +14,15 @@ RUN npm install
 # Copy rest of the app to the working directory
 COPY . .
 
+RUN npm build
+
+RUN npm install-g serve
+
 # Expose port 8000
 EXPOSE 3000
 
 # Define entry point
-CMD ["npm", "start"]
+CMD ["serve","-s", "build", "-1","3000"]
 
 
 
