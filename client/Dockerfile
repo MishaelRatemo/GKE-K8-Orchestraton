@@ -22,7 +22,7 @@ RUN npm install -g serve
 EXPOSE 3000
 
 # Define entry point
-CMD ["serve","-s", "build", "-1","3000"]
+CMD ["serve","-s", "build","3000"]
 
 
 
