@@ -16,7 +16,7 @@ COPY . .
 
 RUN npm build
 
-RUN npm install-g serve
+RUN npm install -g serve
 
 # Expose port 8000
 EXPOSE 3000
