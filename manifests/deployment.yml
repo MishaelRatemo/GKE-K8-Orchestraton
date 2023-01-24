@@ -18,7 +18,7 @@ spec:
     spec:
      containers:
      - name: clientcontainer
-       image: mishaelr/frontend: 1
+       image: "gcr.io/shop-375720/github.com/mishaelratemo/gke-k8-orchestraton:$SHORT_SHA"
        ports:
          containerPort: 3000
 ---
