@@ -18,12 +18,11 @@ RUN npm build
 
 RUN npm install -g serve
 
-# Expose port 8000
+# Expose port 3000
 EXPOSE 3000
 
 # Define entry point
-CMD ["serve","-s", "build", "-1","3000"]
-
+CMD [ "serve", "-s", "build", "-l", "3000" ]
 
 
 # FROM node:16.17.1-alpine3.16 as build
