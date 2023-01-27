@@ -17,7 +17,7 @@ RUN npm install
 COPY . .
 
 # Expose port 8000
-EXPOSE 5000
+# EXPOSE 5000
 
 # Define entry point
 CMD ["npm", "start"]
